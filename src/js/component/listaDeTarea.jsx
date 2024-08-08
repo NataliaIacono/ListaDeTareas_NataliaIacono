@@ -5,18 +5,27 @@ const ListaDeTarea = () => {
     const [lista, setLista] = useState([]);
 
     const addTareaToList = () => {
-        setLista([...lista, tarea]); //esto debería de funcionar
+        setLista([...lista, tarea]);
         setTarea('');
         console.log('Tarea añadida', lista);
     };
 
     const agregarValorAlInput = (event) => {
-        setTarea(event.target.value);
+        setTarea(event.target.value); // siempre que quiero obtener un texto del input
     };
 
-    const presionarTeclaEnter = (event) => {
+    /*const presionarTeclaEnter = (event) => {
         if (event.key === 'Enter') {
             addTareaToList();
+        }
+    };*/
+    const presionarTeclaEnter = (event) => {
+        if (event.key === 'Enter') {
+            if (tarea.trim() === '') {
+                alert('No escribiste tarea');
+            } else {
+                addTareaToList();
+            }
         }
     };
 
@@ -36,20 +45,24 @@ const ListaDeTarea = () => {
 
     return (
         <div>
-            <input type="text" placeholder="agregar tarea" value={tarea} onChange={agregarValorAlInput} onKeyDown={presionarTeclaEnter} />
-            <ul>
-                {lista.map((item, index) => (
-                    <li key={index}>
-                        {item}{' '}
-                        <button
-                            onClick={() => {
-                                eliminarTarea(index);
-                            }}>
-                            X
-                        </button>
-                    </li>
-                ))}
-            </ul>
+            <div className="contenedor">
+                <input type="text" placeholder="agregar tarea" value={tarea} onChange={agregarValorAlInput} onKeyDown={presionarTeclaEnter} />
+                <ul>
+                    {lista.map((item, index) => (
+                        <li key={index}>
+                            {item}{' '}
+                            <button
+                                className="basura"
+                                onClick={() => {
+                                    eliminarTarea(index);
+                                }}>
+                                <i className="fa-regular fa-trash-can"></i>
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+                <p className="tengo">Tengo {lista.length} tareas </p>
+            </div>
         </div>
     );
 };

@@ -5,7 +5,7 @@ import ListaDeTarea from './listaDeTarea';
 const Home = () => {
     return (
         <div className="text-center">
-            <h1 className="text-center mt-5">Lista de Tareas</h1>
+            <h1 className="titulo text-center mt-5">Lista de Tareas</h1>
             <ListaDeTarea />
         </div>
     );
