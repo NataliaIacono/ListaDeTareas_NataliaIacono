@@ -61,7 +61,7 @@ const ListaDeTarea = () => {
                         </li>
                     ))}
                 </ul>
-                <p className="tengo">Tengo {lista.length} tareas </p>
+                <p className="tengo">{lista.length > 0 ? `Tengo ${lista.length} tareas` : 'No hay tareas, añadir tareas'}</p>
             </div>
         </div>
     );

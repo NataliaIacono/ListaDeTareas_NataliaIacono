@@ -28,6 +28,11 @@ li {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    margin-left: 5px;
+}
+li:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(187, 187, 187);
 }
 ul {
     display: contents;
@@ -43,10 +48,11 @@ input {
     border-radius: 5px;
 }
 .basura {
-    background: rgb(57, 57, 223);
+    background: rgba(253, 253, 253, 0);
     color: white;
     border: none;
 }
+
 .basura:hover {
     background: red;
 }
