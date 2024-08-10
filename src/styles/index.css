@@ -29,10 +29,10 @@ li {
     justify-content: space-between;
     margin-top: 10px;
     margin-left: 5px;
+    padding: 5px;
 }
 li:hover {
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    background: rgb(187, 187, 187);
+    background: rgb(184, 184, 184);
 }
 ul {
     display: contents;
